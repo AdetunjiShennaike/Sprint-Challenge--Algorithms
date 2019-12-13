@@ -8,6 +8,8 @@ So every iteration is going to be the same as increasing 1 n value in a range of
 b)The runtime would be O(n*k), because the first loop goes through for the entirety of n, which is O(n) and the inner loop every time will go through k iterations, 
 which will always be smaller than n. The second loop isn't equal to log n, hence calling the output of the operation O(k)
 
+as long as the loop is less than n it is going to be log(n)
+
 c)The runtime is O(n), it will always recursively go through n times. Its the same runtime as an iterative loop like for(i=0;n>i;i++).
 
 ## Exercise II

@@ -117,18 +117,55 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        for x in range(0, len(self._list)-3):
-          while self.can_move_right() is True:
-            self.lightRun()
-            self.move_right()
-            self.smallest()
-            self.swapLeft()
-          while self.can_move_left() is True:
-            self.lightRun()
-            self.move_left()
-            self.largest()
-            self.swapRight()
+        # for x in range(0, len(self._list)):
+        #   while self.can_move_right() is True:
+        #     self.lightRun()
+        #     self.move_right()
+        #     self.smallest()
+        #     self.swapLeft()
+        #   while self.can_move_left() is True:
+        #     self.lightRun()
+        #     self.move_left()
+        #     self.largest()
+        #     self.swapRight()
 
+        # This passes but has a high _time count ^^
+
+
+        # self.lightRun()
+        # while self.can_move_right() is True:
+        #   self.move_right()
+        #   self.largest()
+        # self.smallest()
+        # while self.light_is_on() is True:
+        #   while self.can_move_left() is True and self.compare_item() != None:
+        #     self.move_left()
+        #     self.largest()
+        #   while self.can_move_right() is True and self.compare_item() != -1:
+        #     self.move_right()
+        #   self.move_left()  
+        #   self.swap_item()
+        #   if self.compare_item() == None:
+        #     self.set_light_off()
+
+        self.swap_item()
+        while self.can_move_right() is True:
+          self.move_right()
+          self.largest()
+        self.smallest()
+        while self.can_move_left() is True and self.compare_item() != None:
+          self.move_left()
+          self.largest()
+          while self.can_move_right() is True and self.compare_item() != -1:
+            self.move_right()
+          while self.compare_item == 0:
+            self.move_left()  
+          self.move_left()  
+          self.swap_item()
+          if self.compare_item() == None:
+            print(self._time)
+            break
+        # This has a low _time count but horrible time complexity
 
         
 
