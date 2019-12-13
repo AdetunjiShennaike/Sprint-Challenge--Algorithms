@@ -9,5 +9,5 @@ def count_th(word):
     if 'th' not in word:
       return 0
     else:
-      smaller = word[:word.find('th')] + word[word.find('th')+1:]
+      smaller = word[word.find('th')+2:]
       return 1 + count_th(smaller)
